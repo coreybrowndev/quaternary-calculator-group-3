@@ -9,5 +9,4 @@ class QuaternaryCalculatorApplicationTests {
 	@Test
 	void contextLoads() {
 	}
-
 }
