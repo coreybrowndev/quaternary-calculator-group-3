@@ -1,21 +1,22 @@
 package com.quaternary_group3.QuaternaryCalculator.service;
 
+import java.util.stream.DoubleStream;
 public class Calculator {
     public Calculator() {}
 
-    public int addition(int a, int b) {
+    static int addition(int a, int b) {
         return a + b;
     }
 
-    public int subtract(int a, int b) {
+    static int subtract(int a, int b) {
         return a - b;
     }
 
-    public int multiply(int a, int b) {
+    static int multiply(int a, int b) {
         return a * b;
     }
 
-    public int divide(int a, int b) {
+    static int divide(int a, int b) {
         return a / b;
     }
 
