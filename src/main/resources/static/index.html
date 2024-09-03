@@ -33,10 +33,41 @@
     </style>
 </head>
 <body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Binary Calculator</h1>
+            <div id="output"></div>
+            <div class="container mt-2">
+                <div class="row">
+                    <div class="col-12">
+                        <button type="button" class="btn btn-light" onclick="input('0')">0</button>
+                        <button type="button" class="btn btn-light" onclick="input('1')">1</button>
+                        <button type="button" class="btn btn-light" onclick="input('2')">2</button>
+                        <button type="button" class="btn btn-light" onclick="input('3')">3</button>
+                        <button type="button" class="btn btn-danger float-right ml-2" onclick="cls()">AC</button>
+                        <button type="button" class="btn btn-warning float-right" onclick="backspace()">Backspace</button>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-12">
+                        <button type="button" class="btn btn-info" onclick="input('+')">+</button>
+                        <button type="button" class="btn btn-info" onclick="input('-')">-</button>
+                        <button type="button" class="btn btn-info" onclick="input('*')">*</button>
+                        <button type="button" class="btn btn-info" onclick="input('/')">/</button>
+                        <button type="button" class="btn btn-info" onclick="input('^')">^</button>
+                        <button type="button" class="btn btn-info" onclick="squareroot()"></button>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-12">
+                        <button type="button" class="btn btn-success" onclick="calculate()">=</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-
-
-    <script>
+    <script src="https:">
         //Our javascript code will live here actually
     </script>
 </body>
