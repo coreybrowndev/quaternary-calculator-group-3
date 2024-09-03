@@ -20,6 +20,13 @@ public class Calculator {
         return a / b;
     }
 
+    static int square(int a) {return a*a;}
+
+    static int square_root(int a) {
+        double dbl = Math.sqrt(a);
+        return (int)Math.round(dbl);
+    }
+
     //Number from base 4 converted to base 10
     //or number from base 10 converted to base 4
     public String conversion (String number, int sBase, int dBase) {

@@ -28,4 +28,15 @@ class CalculatorTest {
         int divY = Integer.parseInt("2", 4);
         assertEquals("103", Integer.toString(Calculator.divide(x, divY), 4));
     }
+
+    @Test
+    void square() {
+        assertEquals("112210", Integer.toString(Calculator.square(x), 4));
+    }
+
+    @Test
+    void square_root() {   // needs work
+        int sqrtX = 112210;
+        assertEquals("212", Integer.toString(Calculator.square_root(sqrtX), 4));
+    }
 }
