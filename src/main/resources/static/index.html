@@ -7,21 +7,23 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="calculator">
-    <h1 class="calculator-heading" >Quaternary Calculator</h1>
-    <input type="text" class="calculator-display" id="display" disabled>
-    <div class="calculator-keys">
-        <button class="key digit" onclick="appendNumber('0')">0</button>
-        <button class="key digit" onclick="appendNumber('1')">1</button>
-        <button class="key digit" onclick="appendNumber('2')">2</button>
-        <button class="key digit" onclick="appendNumber('3')">3</button>
-        <button class="key operator" onclick="setOperation('+')">+</button>
-        <button class="key operator" onclick="setOperation('-')">-</button>
-        <button class="key operator" onclick="setOperation('*')">*</button>
-        <button class="key operator" onclick="setOperation('/')">/</button>
-        <button class="key operator" onclick="setOperation('√')">√</button>
-        <button class="key clear" onclick="clearDisplay()">C</button>
-        <button class="key equal" onclick="calculate()">=</button>
+<div class="calculator-wrapper">
+    <div class="calculator">
+        <h1 class="calculator-heading" >Quaternary Calculator</h1>
+        <input type="text" class="calculator-display" id="display" disabled>
+        <div class="calculator-keys">
+            <button class="key digit" onclick="appendNumber('0')">0</button>
+            <button class="key digit" onclick="appendNumber('1')">1</button>
+            <button class="key digit" onclick="appendNumber('2')">2</button>
+            <button class="key digit" onclick="appendNumber('3')">3</button>
+            <button class="key operator" onclick="setOperation('+')">+</button>
+            <button class="key operator" onclick="setOperation('-')">-</button>
+            <button class="key operator" onclick="setOperation('*')">*</button>
+            <button class="key operator" onclick="setOperation('/')">/</button>
+            <button class="key clear" onclick="clearDisplay()">C</button>
+            <button class="key clear" onclick="toggleBase()">Base</button>
+            <button class="key equal" onclick="calculate()">=</button>
+        </div>
     </div>
 </div>
 
