@@ -4,7 +4,11 @@
 **How to run**
 1. Run the QuaternaryCalculatorApplication
 2. Go to your browser and type in localhost:8080
-
+![Step1.PNG](resources%2FStep1.PNG)
+![step2.PNG](resources%2Fstep2.PNG)
+![Step3.PNG](resources%2FStep3.PNG)
+![Step4.PNG](resources%2FStep4.PNG)
+![Step5.PNG](resources%2FStep5.PNG)
 # Meetings
 **September 3 at 5 p.m.**
 - Logan, Will, Traigh, and Corey attended
