@@ -1,6 +1,9 @@
 # quaternary-calculator-group-3
 
 # Manual
+**How to use**
+1. Run the QuaternaryCalculatorApplication
+2. Go to your browser and type in localhost:8080
 
 # Meetings
 **September 3 at 5 p.m.**
