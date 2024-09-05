@@ -2,73 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quaternary Calculator</title>
-    <style>
-        table{
-            border: 1px solid black;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        input[type="button"] {
-            width: 100%;
-            padding: 20px 40px;
-            background-color: green;
-            color: white;
-            font-size: 24px;
-            font-weight: bold;
-            border: none;
-            border-radius: 5px;
-        }
-
-        input[type="text"]{
-        padding: 20px 30px;
-        font-size: 24px;
-        font-weight: bold;
-        border: none;
-        border-radius: 5px;
-        border: 2px solid black;
-        }
-
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <div class="jumbotron">
-            <h1>Binary Calculator</h1>
-            <div id="output"></div>
-            <div class="container mt-2">
-                <div class="row">
-                    <div class="col-12">
-                        <button type="button" class="btn btn-light" onclick="input('0')">0</button>
-                        <button type="button" class="btn btn-light" onclick="input('1')">1</button>
-                        <button type="button" class="btn btn-light" onclick="input('2')">2</button>
-                        <button type="button" class="btn btn-light" onclick="input('3')">3</button>
-                        <button type="button" class="btn btn-danger float-right ml-2" onclick="cls()">AC</button>
-                        <button type="button" class="btn btn-warning float-right" onclick="backspace()">Backspace</button>
-                    </div>
-                </div>
-                <div class="row mt-2">
-                    <div class="col-12">
-                        <button type="button" class="btn btn-info" onclick="input('+')">+</button>
-                        <button type="button" class="btn btn-info" onclick="input('-')">-</button>
-                        <button type="button" class="btn btn-info" onclick="input('*')">*</button>
-                        <button type="button" class="btn btn-info" onclick="input('/')">/</button>
-                        <button type="button" class="btn btn-info" onclick="input('^')">^</button>
-                        <button type="button" class="btn btn-info" onclick="squareroot()"></button>
-                    </div>
-                </div>
-                <div class="row mt-2">
-                    <div class="col-12">
-                        <button type="button" class="btn btn-success" onclick="calculate()">=</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+<div class="calculator">
+    <h1 class="calculator-heading" >Quaternary Calculator</h1>
+    <input type="text" class="calculator-display" id="display" disabled>
+    <div class="calculator-keys">
+        <button class="key" onclick="appendNumber('0')">0</button>
+        <button class="key" onclick="appendNumber('1')">1</button>
+        <button class="key" onclick="appendNumber('2')">2</button>
+        <button class="key" onclick="appendNumber('3')">3</button>
+        <button class="key operator" onclick="setOperation('+')">+</button>
+        <button class="key operator" onclick="setOperation('-')">-</button>
+        <button class="key operator" onclick="setOperation('*')">*</button>
+        <button class="key operator" onclick="setOperation('/')">/</button>
+        <button class="key operator" onclick="setOperation('√')">√</button>
+        <button class="key clear" onclick="clearDisplay()">C</button>
+        <button class="key equal" onclick="calculate()">=</button>
     </div>
+</div>
 
-    <script src="https:">
-        //Our javascript code will live here actually
-    </script>
+<script src="script.js"></script>
 </body>
 </html>
