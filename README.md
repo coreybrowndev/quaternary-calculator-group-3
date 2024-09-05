@@ -15,3 +15,23 @@
 **September 5 at 5 p.m.**
 - Got operations working for everything besides square root and squaring before meeting
 - Need to get sqaure root, square, and base 10 operation working
+
+# Dependencies
+- Maven
+- Springboot
+
+# Tasks
+**Logan**
+- Documentation
+
+**Corey**
+- Backend
+- Implementation of application with GUI
+
+**Will**
+- Unit testing
+
+**Traigh**
+- GUI
+
+
