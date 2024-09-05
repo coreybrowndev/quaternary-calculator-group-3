@@ -9,6 +9,8 @@ const Operations = Object.freeze({
     SUBTRACT:  {value: "SUBTRACT", op: '-'},
     MULTIPLY: {value: "MULTIPLY", op: '*'},
     DIVIDE: {value: "DIVIDE", op: '/'},
+    SQUARE: {value: "SQUARE", op: 'a ²'},
+    SQUARE_ROOT: {value: "SQUARE_ROOT", op: '√'},
 });
 
 let operand1 = ""
@@ -16,6 +18,7 @@ let operand2 = ""
 let op = ""
 let operation = null
 let base = 4
+let x = -10000000
 
 
 function appendNumber(digit) {
@@ -33,6 +36,16 @@ function appendNumber(digit) {
 function setOperation(symbol) {
     const o = Object.values(Operations).find((o) => o.op === symbol)
     operation = o.value
+    if (operation === Operations.SQUARE.value) {
+        display.placeholder = `${operand1} ²`
+    }
+
+    if (operation === Operations.SQUARE_ROOT.value) {
+        display.placeholder = `√${operand1}`
+    }
+
+    if (!operand1) return
+
     if(o) {
         op = o.op
     }
@@ -52,14 +65,17 @@ async function calculate() {
         "operand1": operand1,
         "operand2": operand2,
         "operation": operation,
-        "base": base
+        "base": base,
+        "x" : x
+    }
+
+    if(operand2 === "" && operand1.length > 0) {
+        payload["x"] = operand1
     }
 
     let calculation = await computeResult(payload)
 
-    //make the ajax request and then return the result and place into the display
-
-    display.placeholder += ` ${calculation.result}`
+    display.placeholder += ` ${calculation.result} `
 
 }
 

@@ -8,12 +8,14 @@ public class Computation {
     private String operand2;
     private Operation operation;
     private int base;
+    private int x;
 
-    public Computation(String operand1, String operand2, Operation operation, int base) {
+    public Computation(String operand1, String operand2, Operation operation, int base, int x) {
         this.operand1 = operand1;
         this.operand2 = operand2;
         this.operation = operation;
         this.base = base;
+        this.x = x;
     }
 
     public String getOperand1() {
@@ -23,7 +25,6 @@ public class Computation {
     public String getOperand2() {
         return operand2;
     }
-
 
     public String getOperation() {
         return operation.toString();
@@ -39,6 +40,14 @@ public class Computation {
 
     public void setBase(int base) {
         this.base = base;
+    }
+
+    public int getX() {
+        return x;
+    }
+
+    public void setX(int x) {
+        this.x = -1000000000;
     }
 
 }

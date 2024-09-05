@@ -22,9 +22,12 @@ public class Calculator {
 
     public static int square(int a) {return a*a;}
 
-    static int square_root(int a) {
-        double dbl = Math.sqrt(a);
-        return (int)Math.round(dbl);
+    public static int square_root(int a, int base) {
+        int base10 = Integer.parseInt(Integer.toString(a), base);
+        double sqrt = Math.sqrt(base10);
+        String sqrtBase4 = Integer.toString((int) sqrt, base);
+
+        return Integer.parseInt(sqrtBase4, base);
     }
 
     //Number from base 4 converted to base 10

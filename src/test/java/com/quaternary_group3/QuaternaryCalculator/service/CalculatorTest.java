@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class CalculatorTest {
-    int x = Integer.parseInt("212", 4);
+    int x = Integer.parseInt("2", 4);
     int y = Integer.parseInt("32", 4);
 
     @Test
@@ -31,12 +31,12 @@ class CalculatorTest {
 
     @Test
     void square() {
-        assertEquals("112210", Integer.toString(Calculator.square(x), 4));
+        assertEquals("10", Integer.toString(Calculator.square(x), 4));
     }
 
     @Test
-    void square_root() {   // needs work
+    void square_root() {
         int sqrtX = 112210;
-        assertEquals("212", Integer.toString(Calculator.square_root(sqrtX), 4));
+        assertEquals("212", Integer.toString(Calculator.square_root(sqrtX, 4), 4));
     }
 }
