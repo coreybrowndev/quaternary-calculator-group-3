@@ -116,8 +116,10 @@ async function toggleBase() {
 
     } catch (error) {
         if (error instanceof Error) {
+            display.placeholder = "undefined"
             console.log("Error processing conversion: ", error.message)
         }
+        display.placeholder = "undefined"
         console.log("Uknown error when processing conversion request: ", error)
     }
 
@@ -139,6 +141,7 @@ async function computeResult (payload) {
         });
 
         if(!response.ok) {
+            display.placeholder = "undefined"
             console.log("Error: Failed to fetch calculation result.");
             return;
         }
@@ -147,8 +150,10 @@ async function computeResult (payload) {
         return results;
     }catch (error) {
         if (error instanceof Error) {
+            display.placeholder = "undefined"
             console.log("Error when performing calculation: ", error.message)
         }
+        display.placeholder = "undefined"
         console.log("Unknown error occured when calculating: ", error)
     }
 }
