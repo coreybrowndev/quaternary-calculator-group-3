@@ -24,8 +24,6 @@ public class CalculatorController {
             // Convert the operation string to the enum
             Operation operation = Operation.valueOf(computation.getOperation().toUpperCase());
 
-            System.out.printf("We are getting the new request here: %s", computation.getResult());
-
             if (operation == Operation.TOGGLE) {
                 //toggle the base
                 if(computation.getBase() == 10) {
@@ -40,8 +38,15 @@ public class CalculatorController {
             if ((operation == Operation.SQUARE || operation == Operation.SQUARE_ROOT) && computation.getX() != -10000000) {
                 int x = computation.getX();
                 switch (operation) {
+                    //WE LEFT OFF HERE, FIX THE SQUARING PROCESS OF NUMBERS FOR BASE 4!!!!
                     case SQUARE:
+                        System.out.printf("We are getX: %s", computation.getX());
+                        System.out.printf("We are X: %s", x);
+                        System.out.printf("We are base: %s", computation.getBase());
+
                         result.setResult(Integer.toString(Calculator.square(x), computation.getBase()));
+
+                        System.out.printf("We are the result: %s", result.getResult());
                         break;
                     case SQUARE_ROOT:
                         result.setResult(Integer.toString(Calculator.square_root(x, computation.getBase()), computation.getBase()));

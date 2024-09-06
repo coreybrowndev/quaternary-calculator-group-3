@@ -25,6 +25,7 @@ let x = -10000000
 let calculationResultFromPreviousRequest;
 
 
+baseButton.innerHTML = `Base ${base}`
 
 function appendNumber(digit) {
     //keep appending digit until there is a operator set
@@ -78,6 +79,8 @@ async function calculate() {
         payload["x"] = operand1
     }
 
+    console.log('payload: ', payload)
+
     let calculation = await computeResult(payload)
 
     calculationResultFromPreviousRequest = calculation.result
@@ -112,7 +115,7 @@ async function toggleBase() {
 
 
         display.placeholder = `${calculation.result}`
-        baseButton.innerHTML = `Base ${currentBase}`
+        baseButton.innerHTML = `Base ${base}`
 
     } catch (error) {
         if (error instanceof Error) {

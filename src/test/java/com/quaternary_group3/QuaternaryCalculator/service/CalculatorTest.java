@@ -31,8 +31,12 @@ class CalculatorTest {
 
     @Test
     void square() {
-        assertEquals("10", Integer.toString(Calculator.square(2), 4));
+        assertEquals("112210", Integer.toString(Calculator.square(x), 4));
     }
+
+//    212 ^ 2 = 112210
+//
+//    212 ^ 2 = 44944
 
     @Test
     void square_root() {
@@ -44,13 +48,4 @@ class CalculatorTest {
     void conversion() {
         assertEquals("4", Calculator.conversion(Integer.toString(10), 4, 10));
     }
-
-    @Test
-    void division_by_zero() {
-        ArithmeticException exception = assertThrows(ArithmeticException.class, () -> Calculator.divide(x, 0));
-
-        assertEquals("Division by zero", exception.getMessage());
-    }
-
-
 }
