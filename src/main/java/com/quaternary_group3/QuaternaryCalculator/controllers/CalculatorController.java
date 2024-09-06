@@ -24,6 +24,19 @@ public class CalculatorController {
             // Convert the operation string to the enum
             Operation operation = Operation.valueOf(computation.getOperation().toUpperCase());
 
+            System.out.printf("We are getting the new request here: %s", computation.getResult());
+
+            if (operation == Operation.TOGGLE) {
+                //toggle the base
+                if(computation.getBase() == 10) {
+                    result.setResult(Calculator.conversion(computation.getResult(), computation.getBase(), 4));
+                } else {
+                    result.setResult(Calculator.conversion(computation.getResult(), computation.getBase(), 10));
+                }
+
+                return result;
+            }
+
             if ((operation == Operation.SQUARE || operation == Operation.SQUARE_ROOT) && computation.getX() != -10000000) {
                 int x = computation.getX();
                 switch (operation) {
@@ -39,8 +52,6 @@ public class CalculatorController {
             }else {
                 int x = Integer.parseInt(computation.getOperand1(), computation.getBase());
                 int y = Integer.parseInt(computation.getOperand2(), computation.getBase());
-
-                System.out.println("we entered this case:!!!");
 
                 switch (operation) {
                     case ADD:

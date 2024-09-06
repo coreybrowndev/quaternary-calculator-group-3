@@ -4,6 +4,8 @@ const buttons = document.querySelectorAll(".key")
 
 const display = document.querySelector("#display")
 
+const baseButton = document.querySelector(".base")
+
 const Operations = Object.freeze({
     ADD:  {value: "ADD", op: '+'},
     SUBTRACT:  {value: "SUBTRACT", op: '-'},
@@ -11,6 +13,7 @@ const Operations = Object.freeze({
     DIVIDE: {value: "DIVIDE", op: '/'},
     SQUARE: {value: "SQUARE", op: 'a ²'},
     SQUARE_ROOT: {value: "SQUARE_ROOT", op: '√'},
+    TOGGLE: {value: "TOGGLE"}
 });
 
 let operand1 = ""
@@ -19,6 +22,8 @@ let op = ""
 let operation = null
 let base = 4
 let x = -10000000
+let calculationResultFromPreviousRequest;
+
 
 
 function appendNumber(digit) {
@@ -75,8 +80,50 @@ async function calculate() {
 
     let calculation = await computeResult(payload)
 
-    display.placeholder += ` ${calculation.result} `
+    calculationResultFromPreviousRequest = calculation.result
 
+    display.placeholder += ` ${calculation.result} `
+}
+
+async function toggleBase() {
+    const currentBase = base
+    operation = Operations.TOGGLE
+
+    let payload = {
+        "operand1": operand1,
+        "operand2": operand2,
+        "operation": operation.value,
+        "base": base,
+        "x" : x,
+        "result": calculationResultFromPreviousRequest
+    }
+
+    try {
+
+        const calculation = await computeResult(payload)
+        calculationResultFromPreviousRequest = calculation.result
+
+        if (currentBase === 4) {
+            base = 10;
+        } else {
+            base = 4
+        }
+
+
+
+        display.placeholder = `${calculation.result}`
+        baseButton.innerHTML = `Base ${currentBase}`
+
+    } catch (error) {
+        if (error instanceof Error) {
+            console.log("Error processing conversion: ", error.message)
+        }
+        console.log("Uknown error when processing conversion request: ", error)
+    }
+
+    console.log('our base: ', base)
+
+    //else convert to 4
 }
 
 async function computeResult (payload) {

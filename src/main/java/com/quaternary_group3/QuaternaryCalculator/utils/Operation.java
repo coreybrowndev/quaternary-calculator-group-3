@@ -7,4 +7,5 @@ public enum Operation {
     DIVIDE,
     SQUARE,
     SQUARE_ROOT,
+    TOGGLE
 }
