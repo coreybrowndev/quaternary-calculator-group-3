@@ -44,4 +44,13 @@ class CalculatorTest {
     void conversion() {
         assertEquals("4", Calculator.conversion(Integer.toString(10), 4, 10));
     }
+
+    @Test
+    void division_by_zero() {
+        ArithmeticException exception = assertThrows(ArithmeticException.class, () -> Calculator.divide(x, 0));
+
+        assertEquals("Division by zero", exception.getMessage());
+    }
+
+    
 }
