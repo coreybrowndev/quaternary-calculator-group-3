@@ -71,6 +71,10 @@ Note - Need JDK downloaded to run the application
 - Got operations working for everything besides square root and squaring before meeting
 - Working on getting square root, square, and base 10 operation working
 
+**September 6 at 5 p.m.**
+- Logan, Traigh, Will, and Corey attended
+- Finished up unit testing
+
 # Dependencies
 - Maven
 - Springboot
