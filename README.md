@@ -7,15 +7,15 @@
 
 **Addition**
 1. Click the first number you want to add
-![Step1.PNG](resources%2FStep1.PNG)
+![Step1.PNG](assets%2FStep1.PNG)
 2. Click the plus sign
-![step2.PNG](resources%2Fstep2.PNG)
+![step2.PNG](assets%2Fstep2.PNG)
 3. Click the second number you want to add
-![Step3.PNG](resources%2FStep3.PNG)
+![Step3.PNG](assets%2FStep3.PNG)
 4. Click the equals sign for results
-![Step4.PNG](resources%2FStep4.PNG)
+![Step4.PNG](assets%2FStep4.PNG)
 5. Look at results
-![Step5.PNG](resources%2FStep5.PNG)
+![Step5.PNG](assets%2FStep5.PNG)
 
 **Subtraction**
 1. Click the first number to subtract from
