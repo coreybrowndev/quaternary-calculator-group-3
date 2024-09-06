@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class CalculatorTest {
-    int x = Integer.parseInt("2", 4);
+    int x = Integer.parseInt("212", 4);
     int y = Integer.parseInt("32", 4);
 
     @Test
@@ -31,7 +31,7 @@ class CalculatorTest {
 
     @Test
     void square() {
-        assertEquals("10", Integer.toString(Calculator.square(x), 4));
+        assertEquals("10", Integer.toString(Calculator.square(2), 4));
     }
 
     @Test
@@ -52,5 +52,5 @@ class CalculatorTest {
         assertEquals("Division by zero", exception.getMessage());
     }
 
-    
+
 }
