@@ -125,10 +125,6 @@ async function toggleBase() {
         display.placeholder = "undefined"
         console.log("Uknown error when processing conversion request: ", error)
     }
-
-    console.log('our base: ', base)
-
-    //else convert to 4
 }
 
 async function computeResult (payload) {

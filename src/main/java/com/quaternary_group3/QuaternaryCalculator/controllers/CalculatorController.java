@@ -40,49 +40,45 @@ public class CalculatorController {
                 switch (operation) {
                     //WE LEFT OFF HERE, FIX THE SQUARING PROCESS OF NUMBERS FOR BASE 4!!!!
                     case SQUARE:
-                        System.out.printf("We are getX: %s", computation.getX());
-                        System.out.printf("We are X: %s", x);
-                        System.out.printf("We are base: %s", computation.getBase());
-
-                        result.setResult(Integer.toString(Calculator.square(x), computation.getBase()));
-
-                        System.out.printf("We are the result: %s", result.getResult());
+                        int localBaseConversion = 0;
+                        if (computation.getBase() == 4) {
+                            localBaseConversion = Integer.parseInt(Integer.toString(x), 4);
+                        }
+                        result.setResult(Integer.toString(Calculator.square(localBaseConversion), computation.getBase()));
                         break;
                     case SQUARE_ROOT:
+                        System.out.println("fired: OP: " + "SQUARE_ROOT");
                         result.setResult(Integer.toString(Calculator.square_root(x, computation.getBase()), computation.getBase()));
                         break;
                     default:
                         result.setResult("Unsupported operation for single operand");
                 }
             }else {
+                System.out.println("MADE IT TO THE ELSE BLOCK: ");
                 int x = Integer.parseInt(computation.getOperand1(), computation.getBase());
                 int y = Integer.parseInt(computation.getOperand2(), computation.getBase());
 
                 switch (operation) {
                     case ADD:
+                        System.out.println("fired: OP: " + "ADD");
                         result.setResult(Integer.toString(Calculator.addition(x, y), computation.getBase()));
                         break;
                     case SUBTRACT:
+                        System.out.println("fired: OP: " + "SUBTRACT");
                         result.setResult(Integer.toString(Calculator.subtract(x, y), computation.getBase()));
                         break;
                     case MULTIPLY:
+                        System.out.println("fired: OP: " + "MULTIPLY");
                         result.setResult(Integer.toString(Calculator.multiply(x, y), computation.getBase()));
                         break;
                     case DIVIDE:
+                        System.out.println("fired: OP: " + "DIVIDE");
                         result.setResult(Integer.toString(Calculator.divide(x, y), computation.getBase()));
                         break;
-                    case SQUARE:
-                        //if x doesnt equal -1 we compute and return
-                        result.setResult(Integer.toString(Calculator.square(x)));
-                        break;
-                    case SQUARE_ROOT:
-
-                        result.setResult(Integer.toString(Calculator.square(x)));
                     default:
                         result.setResult("Unsupported operation");
                 }
             }
-
         } catch (IllegalArgumentException e) {
             result.setResult("Invalid operation");
         }
