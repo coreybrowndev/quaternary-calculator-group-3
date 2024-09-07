@@ -34,6 +34,10 @@ class CalculatorTest {
         assertEquals("112210", Integer.toString(Calculator.square(x), 4));
     }
 
+//    212 ^ 2 = 112210
+//
+//    212 ^ 2 = 44944
+
     @Test
     void square_root() {
         int sqrtX = 112210;

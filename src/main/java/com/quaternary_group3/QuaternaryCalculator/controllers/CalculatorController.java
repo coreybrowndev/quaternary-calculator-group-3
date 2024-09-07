@@ -43,36 +43,32 @@ public class CalculatorController {
                         int localBaseConversion = 0;
                         if (computation.getBase() == 4) {
                             localBaseConversion = Integer.parseInt(Integer.toString(x), 4);
+                        } else {
+                            localBaseConversion = Integer.parseInt(Integer.toString(x), 10);
                         }
                         result.setResult(Integer.toString(Calculator.square(localBaseConversion), computation.getBase()));
                         break;
                     case SQUARE_ROOT:
-                        System.out.println("fired: OP: " + "SQUARE_ROOT");
                         result.setResult(Integer.toString(Calculator.square_root(x, computation.getBase()), computation.getBase()));
                         break;
                     default:
                         result.setResult("Unsupported operation for single operand");
                 }
             }else {
-                System.out.println("MADE IT TO THE ELSE BLOCK: ");
                 int x = Integer.parseInt(computation.getOperand1(), computation.getBase());
                 int y = Integer.parseInt(computation.getOperand2(), computation.getBase());
 
                 switch (operation) {
                     case ADD:
-                        System.out.println("fired: OP: " + "ADD");
                         result.setResult(Integer.toString(Calculator.addition(x, y), computation.getBase()));
                         break;
                     case SUBTRACT:
-                        System.out.println("fired: OP: " + "SUBTRACT");
                         result.setResult(Integer.toString(Calculator.subtract(x, y), computation.getBase()));
                         break;
                     case MULTIPLY:
-                        System.out.println("fired: OP: " + "MULTIPLY");
                         result.setResult(Integer.toString(Calculator.multiply(x, y), computation.getBase()));
                         break;
                     case DIVIDE:
-                        System.out.println("fired: OP: " + "DIVIDE");
                         result.setResult(Integer.toString(Calculator.divide(x, y), computation.getBase()));
                         break;
                     default:

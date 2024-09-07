@@ -79,8 +79,6 @@ async function calculate() {
         payload["x"] = operand1
     }
 
-    console.log('payload: ', payload)
-
     let calculation = await computeResult(payload)
 
     calculationResultFromPreviousRequest = calculation.result
