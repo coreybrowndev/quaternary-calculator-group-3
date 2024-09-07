@@ -4,6 +4,9 @@
 **How to run**
 
 Note - Need JDK downloaded to run the application
+
+Make sure calculator is set to base 4 for calculations
+
 1. Run the QuaternaryCalculatorApplication
 2. Go to your browser and type in localhost:8080
 
